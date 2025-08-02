@@ -7,6 +7,7 @@ import Footer from "./Components/Footer";
 import CategoryLinks from "./Components/CategoryLinks";
 import BookDetail from "./Components/BookDetails";
 import Wishlist from "./Components/WishList";
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/books/:category" element={<BookGrid />} />
         <Route path="/books/detail/:id" element={<BookDetail />} />
         <Route path="/wishList" element={<Wishlist />} />
+        <Route path="/contact" element={<ContactUs />} />
       </Routes>
       <Footer />
     </Router>

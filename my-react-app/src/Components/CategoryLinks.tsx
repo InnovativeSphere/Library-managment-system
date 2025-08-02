@@ -74,7 +74,7 @@ const CategoryLinks: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#1a1a2e] min-h-screen flex flex-col items-center justify-start p-8 font-sans text-white relative">
+    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-start p-8 font-sans text-white relative">
       <button
         onClick={() => navigate(-1)}
         className="absolute top-4 left-4 bg-[#16213e] hover:bg-[#0f3460] transition duration-300 py-2 px-4 rounded-lg font-semibold flex items-center"

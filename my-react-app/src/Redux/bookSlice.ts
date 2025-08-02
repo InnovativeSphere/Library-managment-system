@@ -101,7 +101,7 @@ export const fetchBooks = createAsyncThunk<any, string | undefined>(
     } else {
       const randomSubject =
         subjects[Math.floor(Math.random() * subjects.length)];
-      apiUrl = `https://www.googleapis.com/books/v1/volumes?q=subject:${randomSubject}&maxResults=8&key=${API_KEY}`;
+      apiUrl = `https://www.googleapis.com/books/v1/volumes?q=subject:${randomSubject}&maxResults=16&key=${API_KEY}`;
     }
 
     const response = await fetch(apiUrl);

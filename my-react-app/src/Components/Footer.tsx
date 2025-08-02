@@ -1,90 +1,124 @@
-import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router";
+import { FaFacebook, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 md:px-16 lg:px-24">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-[#1a1a2e] text-gray-100 py-8 px-4 md:px-16 lg:px-24">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-xl font-semibold">Library Management System</h3>
-          <p className="mt-4">
-            You're one step from all your needs. Shop wiht us and experience the
-            best online shopping experiences.
+          <h3 className="text-xl font-semibold mb-4">
+            Library Management System
+          </h3>
+          <p className="text-gray-400">
+            Your one-stop solution for managing library resources efficiently.
+            Access, organize, and explore vast collections seamlessly with our
+            platform.
           </p>
         </div>
 
-        <div className="flex flex-col md:items-center ">
-          <h4 className="text-lg font-semibold">Quick Links</h4>
-          <ul className="mt-4 space-y-2 ">
+        <div>
+          <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul className="space-y-3">
             <li>
-              <Link className="hover:underline" to="/">
+              <a
+                href="/"
+                className="hover:underline transition duration-300 hover:text-indigo-400"
+              >
                 Home
-              </Link>
+              </a>
             </li>
-          </ul>
-          <ul>
             <li>
-              <Link className="hover:underline" to="/shop">
+              <a
+                href="/shop"
+                className="hover:underline transition duration-300 hover:text-indigo-400"
+              >
                 Shop
-              </Link>
+              </a>
             </li>
-          </ul>
-          <ul>
             <li>
-              <Link className="hover:underline" to="/contact">
+              <a
+                href="/contact"
+                className="hover:underline transition duration-300 hover:text-indigo-400"
+              >
                 Contact
-              </Link>
+              </a>
             </li>
-          </ul>
-          <ul>
             <li>
-              <Link className="hover:underline" to="/about">
+              <a
+                href="/about"
+                className="hover:underline transition duration-300 hover:text-indigo-400"
+              >
                 About
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
 
-        <div className="">
-          <h4 className="text-lg font-semibold"> Follow us</h4>
-
-          <div className="flex space-x-4 mt-4">
-            <a href="" className="hover:text-gray-400">
-              <FaFacebook />
+        <div>
+          <h4 className="text-lg font-semibold mb-4">Follow us</h4>
+          <div className="flex space-x-4 mb-6">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-indigo-400 transition duration-300"
+              aria-label="Facebook"
+            >
+              <FaFacebook size={24} />
             </a>
-            <a href="" className="hover:text-gray-400">
-              <FaTwitter />
+            <a
+              href="#"
+              className="text-gray-400 hover:text-indigo-400 transition duration-300"
+              aria-label="Twitter"
+            >
+              <FaTwitter size={24} />
             </a>
-            <a href="" className="hover:text-gray-400">
-              <FaGithub />
+            <a
+              href="#"
+              className="text-gray-400 hover:text-indigo-400 transition duration-300"
+              aria-label="GitHub"
+            >
+              <FaGithub size={24} />
             </a>
-            <a href="" className="hover:text-gray-400">
-              <FaLinkedin />
+            <a
+              href="#"
+              className="text-gray-400 hover:text-indigo-400 transition duration-300"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin size={24} />
             </a>
           </div>
-          <form className="flex items-center mt-8 justify-center" action="">
+          <form
+            className="flex flex-col md:flex-row items-center md:items-center space-y-2 md:space-y-0 md:space-x-2"
+            action="#"
+          >
             <input
-              className="w-full p-2  bg-gray-80 border border-gray-600"
-              placeholder="Enter Your Email"
               type="email"
-              name="name"
-              autoComplete="additional-name"
+              placeholder="Enter Your Email"
+              className="w-full md:flex-1 p-2 px-4 rounded-md border border-gray-600 bg-[#2e2e3e] text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
             />
-            <button className=" cursor-pointer bg-blue-400 text-white px-4 py-2 rounded-r-md border border-gray-800 hover:scale-105 transition-all">
+            <button
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-md transition transform hover:scale-105"
+            >
               Subscribe
             </button>
           </form>
         </div>
       </div>
-      <div className="mt-8 border-t border-gray-700 pt-4">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; 2025 Library Management System All Rights Reserved.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a className="hover:underline" href="">
+
+      <div className="border-t border-gray-700 mt-8 pt-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm space-y-4 md:space-y-0">
+          <p>&copy; 2025 Library Management System. All Rights Reserved.</p>
+          <div className="flex space-x-6">
+            <a
+              href="#"
+              className="hover:underline transition duration-300 hover:text-indigo-400"
+            >
               Privacy Policy
             </a>
-            <a className="hover:underline" href="">
-              Terms & Coniditions
+            <a
+              href="#"
+              className="hover:underline transition duration-300 hover:text-indigo-400"
+            >
+              Terms & Conditions
             </a>
           </div>
         </div>

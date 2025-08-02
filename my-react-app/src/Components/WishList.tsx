@@ -45,7 +45,7 @@ const Wishlist: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#001f3f] p-6 font-sans text-white">
+    <div className="min-h-screen bg-gray-900 p-6 font-sans text-white">
       <h2 className="text-5xl font-extrabold mb-6 text-center">
         Your Wishlist
       </h2>

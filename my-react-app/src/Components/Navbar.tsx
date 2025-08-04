@@ -73,32 +73,32 @@ const Navbar = () => {
       <div
         className={`${
           menuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-        } transition-all duration-300 overflow-hidden md:hidden absolute top-full left-0 w-full bg-[#1a1a2e] flex flex-col items-center space-y-2 px-4 py-2 mt-2 rounded-b-lg shadow-lg`}
+        } transition-all duration-300 overflow-hidden md:hidden  absolute top-full left-0 w-full bg-gray-900 flex flex-col items-center space-y-2 px-4 py-2 mt-2 rounded-b-lg shadow-lg`}
       >
         <Link
           to="/"
-          className="w-full text-center py-2 px-4 rounded hover:text-indigo-400 transition-colors duration-300"
+          className="w-full text-center py-2 px-4 rounded hover:underline hover:text-indigo-400 transition-colors duration-300"
           onClick={() => setMenuOpen(false)}
         >
           Home
         </Link>
         <Link
           to="/wishList"
-          className="w-full text-center py-2 px-4 rounded hover:text-indigo-400 transition-colors duration-300"
+          className="w-full text-center py-2 px-4 rounded hover:underline hover:text-indigo-400 transition-colors duration-300"
           onClick={() => setMenuOpen(false)}
         >
           Wishlist
         </Link>
         <Link
           to="/category"
-          className="w-full text-center py-2 px-4 rounded hover:text-indigo-400 transition-colors duration-300"
+          className="w-full text-center py-2 px-4 rounded hover:underline hover:text-indigo-400 transition-colors duration-300"
           onClick={() => setMenuOpen(false)}
         >
           Categories
         </Link>
         <Link
           to="/contact"
-          className="w-full text-center py-2 px-4 rounded hover:text-indigo-400 transition-colors duration-300"
+          className="w-full text-center py-2 px-4 rounded hover:underline hover:text-indigo-400 transition-colors duration-300"
           onClick={() => setMenuOpen(false)}
         >
           Contact Us

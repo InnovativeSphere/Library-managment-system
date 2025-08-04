@@ -9,7 +9,7 @@ import BookDetail from "./Components/BookDetails";
 import Wishlist from "./Components/WishList";
 import ContactUs from "./Pages/ContactUs";
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Navbar />
@@ -26,4 +26,3 @@ function App() {
   );
 }
 
-export default App;

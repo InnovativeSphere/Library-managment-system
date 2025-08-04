@@ -1,16 +1,12 @@
-import React from "react";
-
 const Loader: React.FC = () => {
   return (
     <div className="flex justify-center items-center h-screen ">
       <div className="w-20 h-20 relative animate-bounce">
-        {/* Open book with flipping pages */}
         <svg
           viewBox="0 0 64 64"
           className="w-full h-full text-white"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Left page */}
           <rect
             x="4"
             y="12"
@@ -22,7 +18,6 @@ const Loader: React.FC = () => {
             rx="2"
             style={{ transformOrigin: "14px 32px" }}
           />
-          {/* Right page */}
           <rect
             x="40"
             y="12"
@@ -35,9 +30,7 @@ const Loader: React.FC = () => {
             style={{ transformOrigin: "54px 32px" }}
           />
 
-          {/* Pages flipping effect (animated lines) */}
           <g stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            {/* Left page turn */}
             <line
               x1="12"
               y1="20"
@@ -49,7 +42,6 @@ const Loader: React.FC = () => {
                 animation: "flip-left 1s infinite alternate ease-in-out",
               }}
             />
-            {/* Right page turn */}
             <line
               x1="52"
               y1="20"

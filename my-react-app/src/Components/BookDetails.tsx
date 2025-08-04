@@ -126,7 +126,7 @@ const BookDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#001f3f] flex items-center justify-center p-6 font-sans">
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center py-10 p-6 font-sans">
       <div className="bg-[#2c3e50] rounded-xl shadow-lg max-w-4xl w-full p-8 flex flex-col md:flex-row gap-8 transition-transform hover:scale-105 duration-300">
         <button
           onClick={() => navigate(-1)}

@@ -58,7 +58,7 @@ const Wishlist: React.FC = () => {
           {wishlistBooks.map((book, index) => (
             <li
               key={`${book.id}-${index}`}
-              className="bg-[#2c3e50] rounded-lg p-4 flex justify-between items-center transition-transform transform hover:scale-102"
+              className="bg-[#1c2a38] rounded-lg p-4 flex justify-between items-center transition-transform transform hover:scale-102"
             >
               <div className="flex items-center">
                 {book.volumeInfo.imageLinks?.thumbnail ? (

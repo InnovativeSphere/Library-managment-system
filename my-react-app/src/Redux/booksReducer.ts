@@ -30,10 +30,7 @@ interface BookVolumeInfo {
   description?: string;
 }
 
-interface BookDetails {
-  id: string;
-  volumeInfo: BookVolumeInfo;
-}
+
 
 
 const booksReducer = (state = initialState, action: AnyAction) => {

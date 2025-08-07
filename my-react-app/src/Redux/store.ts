@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import booksReducer from "../Redux/bookSlice"; 
+import booksReducer from "../Redux/bookSlice";
 import searchReducer from "./searchSlice";
 import wishListSlice from "./wishListSlice";
-
-
+import userReducer from "../Redux/userSlice";
 
 const store = configureStore({
   reducer: {
     books: booksReducer,
-    search : searchReducer,
-    wishlist : wishListSlice
+    search: searchReducer,
+    wishlist: wishListSlice,
+    user: userReducer,
   },
 });
 

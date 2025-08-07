@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaArrowLeft } from "react-icons/fa"; // Import FaArrowLeft
 import { useDispatch, useSelector } from "react-redux";
 
 const subjects = [
@@ -60,61 +60,71 @@ const CategoryLinks: React.FC = () => {
   );
   const navigate = useNavigate();
 
+  // This should ideally be an action creator defined in your Redux actions file
+  // For this example, keeping it inline for direct application.
   const setSearchTerm = (term: string) => ({
     type: "SET_SEARCH_TERM",
     payload: term,
   });
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchTerm(event.target.value));
   };
 
   const handleSearchSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    navigate(`/books/search?query=${encodeURIComponent(searchTerm)}`);
+    // Only navigate if searchTerm is not empty
+    if (searchTerm.trim()) {
+      navigate(`/books/search?query=${encodeURIComponent(searchTerm.trim())}`);
+    }
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-start p-8 font-sans text-white relative">
+    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-start p-4 sm:p-6 lg:p-8 text-gray-100">
+      {/* Back Button */}
       <button
         onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 bg-[#16213e] hover:bg-[#0f3460] transition duration-300 py-2 px-4 rounded-lg font-semibold flex items-center"
+        className="absolute top-20 left-4 z-10 p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transform hover:scale-105"
       >
-        Back
+        <FaArrowLeft className="text-xl" />
       </button>
 
-      <h1 className="text-4xl font-extrabold mb-8 text-indigo-400 shadow-lg">
-        Select a Category
+      {/* Header */}
+      <h1 className="text-4xl sm:text-5xl font-extrabold mb-8 text-white tracking-wide text-center mt-12 sm:mt-0">
+        <span className="text-cyan-500">Explore</span> Categories
       </h1>
 
-      <form onSubmit={handleSearchSubmit} className="mb-8 w-full max-w-lg">
-        <div className="flex shadow-lg rounded-lg overflow-hidden">
+      {/* Search Form */}
+      <form onSubmit={handleSearchSubmit} className="mb-10 w-full max-w-lg px-4">
+        <div className="flex shadow-xl rounded-lg overflow-hidden border border-gray-700 focus-within:border-cyan-500 transition-all duration-300">
           <input
             type="text"
             value={searchTerm}
             onChange={handleSearchChange}
-            placeholder="Search books..."
-            className="flex-1 p-3 bg-[#16213e] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+            placeholder="Search books by title or author..."
+            className="flex-1 p-3 sm:p-4 bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-0 transition-all duration-200"
           />
           <button
             type="submit"
-            className="bg-[#0f3460] hover:bg-[#16213e] duration-300 flex items-center px-4"
+            className="bg-cyan-600 hover:bg-cyan-700 duration-300 flex items-center px-5 sm:px-6 py-3 sm:py-4 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           >
             <FaSearch className="text-white text-xl" />
           </button>
         </div>
       </form>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 w-full max-w-6xl">
+      {/* Categories Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 px-4 w-full max-w-6xl">
         {subjects.map((subject) => (
           <Link
             key={subject}
             to={`/books/${subject}`}
-            className="bg-[#16213e] hover:bg-[#0f3460] rounded-lg p-6 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
+            className="bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-cyan-500/50 border border-transparent hover:border-cyan-500 flex flex-col justify-between items-start"
           >
-            <h2 className="text-xl font-semibold text-indigo-300 mb-2">
+            <h2 className="text-2xl font-semibold text-white mb-2 tracking-wide">
               {subject.charAt(0).toUpperCase() + subject.slice(1)}
             </h2>
-            <p className="text-gray-300">Explore {subject} books</p>
+            <p className="text-gray-400 text-sm">Explore books in {subject} category</p>
           </Link>
         ))}
       </div>
